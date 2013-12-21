@@ -1,7 +1,7 @@
 ajax-service-helper
 ===================
 
-A standalone class to ease ajax requests without the need of external library.
+Standalone class to ease ajax requests without the need of external library.
 
 Usage
 =====
@@ -39,4 +39,4 @@ Prebuild methods are get, post, put and delete
 
     var xmlHttp = service.post('users/1', true, 'name=toto&gender=male');
     var xmlHttp = service.put('users/1', true, 'name=tata');
-    var xmlHttp = service.delete('users/1',true, false);
+    var xmlHttp = service.delete('users/1',true);
