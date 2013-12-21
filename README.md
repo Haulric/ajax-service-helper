@@ -26,7 +26,7 @@ The third parameter will add url encoded attributes to the request (will only wo
 
 Success and error callbacks can also be defined.
 
-    var req = service.get('users', true, false,
+    var req = service.get('users', true,
       function(req){
         alert(req.responseText);
       },
