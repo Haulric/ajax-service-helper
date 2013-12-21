@@ -39,4 +39,4 @@ Prebuild methods are get, post, put and delete
 
     var xmlHttp = service.post('users/1', true, 'name=toto&gender=male');
     var xmlHttp = service.put('users/1', true, 'name=tata');
-    var xmlHttp = service.delete('users/1',true);
+    var xmlHttp = service.del('users/1',true);
