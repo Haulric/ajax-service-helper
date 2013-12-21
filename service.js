@@ -47,8 +47,8 @@ Service.prototype.request = function(method, uri, async, parameters, options, ca
  * @public
  * @return The XMLHttpRequest object.
  */
-Service.prototype.get = function(uri, async, parameters, callback, errorCallback){
-    var req = this.request('GET',uri,async, parameters, false, callback, errorCallback);
+Service.prototype.get = function(uri, async, callback, errorCallback){
+    var req = this.request('GET',uri,async, false, false, callback, errorCallback);
     return req;
 };
 
@@ -154,6 +154,6 @@ Service.prototype._sendRequest = function(request, parameters, callback, errorCa
     };
 
     if(parameters)
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");	
+	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     request.send(parameters);
 };
