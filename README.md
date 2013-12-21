@@ -18,9 +18,9 @@ To enable asynchronous mode set the second parameter to true
           alert(this.responseText);
     };
 
-The third parameter will add url encoded attributes to the request
+The third parameter will add url encoded attributes to the request (will only work for post/put and delete methods)
 
-    var req = service.get('users', true, {
+    var req = service.put('users', true, {
       'id': 1
     }); //service.get('users', true, 'id=1') will work too
 
