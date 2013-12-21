@@ -47,8 +47,8 @@ Service.prototype.request = function(method, uri, async, parameters, options, ca
  * @public
  * @return The XMLHttpRequest object.
  */
-Service.prototype.get = function(uri, async, callback, errorCallback){
-    var req = this.request('GET',uri,async, false, false, callback, errorCallback);
+Service.prototype.get = function(uri, async, parameters, callback, errorCallback){
+    var req = this.request('GET',uri,async, parameters, false, callback, errorCallback);
     return req;
 };
 
@@ -57,7 +57,7 @@ Service.prototype.get = function(uri, async, callback, errorCallback){
  * @public
  * @return The XMLHttpRequest object.
  */
-Service.prototype.post = function(uri, parameters, async, callback, errorCallback){
+Service.prototype.post = function(uri, async, parameters, callback, errorCallback){
     var req = this.request('POST', uri, async, parameters, false, callback, errorCallback);
     return req;
 };
@@ -67,7 +67,7 @@ Service.prototype.post = function(uri, parameters, async, callback, errorCallbac
  * @public
  * @return The XMLHttpRequest object.
  */
-Service.prototype.put = function(uri, parameters, async,  callback, errorCallback){
+Service.prototype.put = function(uri, async, parameters,  callback, errorCallback){
     var req = this.request('PUT', uri, async, parameters, false, callback, errorCallback);
     return req;
 };
@@ -77,7 +77,7 @@ Service.prototype.put = function(uri, parameters, async,  callback, errorCallbac
  * @public
  * @return The XMLHttpRequest object.
  */
-Service.prototype.del = function(uri, parameters, async,  callback, errorCallback){
+Service.prototype.del = function(uri, async, parameters,  callback, errorCallback){
     var req = this.request('DELETE', uri, async, parameters, false, callback, errorCallback);
     return req;
 };
