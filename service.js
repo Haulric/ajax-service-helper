@@ -143,7 +143,7 @@ Service.prototype._formatParameters = function(parameters){
  */
 Service.prototype._sendRequest = function(request, parameters, callback, errorCallback){
     if(callback || errorCallback){
-	request.onReadyStateChange = function(){
+	request.onreadystatechange = function(){
 	    if(callback && request.readyState == 4 && request.status == 200){
 		callback(request);
 	    }
