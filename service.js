@@ -89,7 +89,7 @@ Service.prototype.del = function(uri, async, parameters,  callback, errorCallbac
  * @parameter {JSON} options Properties collection.
  */
 Service.prototype._setRequestOptions = function(req, options){
-   if(typeof options == 'object'){
+   if(typeof options === 'object'){
         for(var option in options){
 	    if(typeof req[option] != 'undefined')
 		req[option] = options[option];
@@ -121,8 +121,8 @@ Service.prototype._buildRequest = function(method,uri,async){
  * @return The urlencoded string
  */
 Service.prototype._formatParameters = function(parameters){
-    if(typeof parameters == 'string') return parameters;
-    if(typeof parameters == 'object'){
+    if(typeof parameters === 'string') return parameters;
+    if(typeof parameters === 'object'){
         var formated = '';
         for(var param in parameters){
             if(formated.length) formated = formated.concat('&');
@@ -144,10 +144,10 @@ Service.prototype._formatParameters = function(parameters){
 Service.prototype._sendRequest = function(request, parameters, callback, errorCallback){
     if(callback || errorCallback){
 	request.onreadystatechange = function(){
-	    if(callback && request.readyState == 4 && request.status == 200){
+	    if(callback && request.readyState === 4 && request.status === 200){
 		callback(request);
 	    }
-	    else if(errorCallback && request.readyState == 4 && request.status != 200){
+	    else if(errorCallback && request.readyState === 4 && request.status !== 200){
 		errorCallback(request);
 	    }
 	}

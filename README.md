@@ -14,7 +14,7 @@ To enable asynchronous mode set the second parameter to true
 
     var req = service.get('users', true);
     req.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200)
+        if(this.readyState === 4 && this.status === 200)
           alert(this.responseText);
     };
 
