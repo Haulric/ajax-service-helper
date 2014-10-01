@@ -4,7 +4,7 @@
 /**
  * Build and send XMLHttpRequests.
  * @class
- * @parameter {String} baseUrl Base url used for each request.
+ * @parameter {String} baseUrl Base url used for each request, won't be used if empty.
  */
 function Service(baseUrl){
     this.baseUrl = false;
@@ -107,8 +107,10 @@ Service.prototype._setRequestOptions = function(req, options){
  */
 Service.prototype._buildRequest = function(method,uri,async){
     var req = new XMLHttpRequest();
-    var uri = uri.replace(this.baseUrl,'/');
-    if(uri.charAt(0) !== '/') uri = '/'.concat(uri);
+    if(this.baseUrl !== ''){
+        var uri = uri.replace(this.baseUrl,'/');
+        if(uri.charAt(0) !== '/') uri = '/'.concat(uri);
+    }
 
     req.open(method, this.baseUrl.concat(uri), async);
     return req;

@@ -6,8 +6,8 @@ Standalone class to ease ajax requests without the need of external library.
 Usage
 =====
 
-    var service = new Service('http://mydomain.com');
-    var req = service.get('users'); //Will send a GET request on http://mydomain.com/users
+    var service = new Service('http://mydomain.com'); // If empty, then the uri passed to post, get or del function won't ever be modified
+    var req = service.get('users'); //Will send a GET request on http://mydomain.com/users or on "users" under the current location if baseUrl is empty
     alert(req.responseText);
 
 To enable asynchronous mode set the second parameter to true
